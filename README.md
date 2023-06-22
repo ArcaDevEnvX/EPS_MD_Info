@@ -1,10 +1,10 @@
 # ELENCO PARAMETRI
 - `baseurl`            = URL BASE
-    - default = https://external-gw-staging.easyparksystem.net/api/
+    - default =  
 - `call`               = Chiamata da effettuare
     - default = permit_get
 - `refreshtoken`       = Token auth di EasyPark
-    - default = f9d290c93e9906f297528dec6edf64b9bfce7a4ba63c2ea4a47062dcb5de9bda
+    - default =  
 - `parameters`         = Parametri URL
     - default = 
 - `requestbodypath`    = Path file da dove leggere la request body
@@ -22,8 +22,8 @@
 
 # Esempi:
 Considera per gli esempi come valori fissi:
-- baseurl=https://external-gw-staging.easyparksystem.net/api/
-- redfreshtoken=f9d290c93e9906f297528dec6edf64b9bfce7a4ba63c2ea4a47062dcb5de9bda
+- baseurl= 
+- redfreshtoken= 
 - requestbodypath=requestbody.txt
 - responsepath=response.txt
 ## PERMIT_CREATE
@@ -87,11 +87,3 @@ Considera per gli esempi come valori fissi:
             {"applicationUniqueId":"IDPROVA2"},
             {"applicationUniqueId":"IDPROVA3"}
         ]
-
-# Documentazione
-
-URL: https://external-gw-staging.easyparksystem.net/api/swagger-ui.html#/authentication-resource/getJwtUsingPOST
-
-RefreshToken: f9d290c93e9906f297528dec6edf64b9bfce7a4ba63c2ea4a47062dcb5de9bda
-
-Codice area: 22137
