@@ -23,7 +23,7 @@
 # Esempi:
 Considera per gli esempi come valori fissi:
 - baseurl= 
-- redfreshtoken= 
+- refreshtoken= 
 - requestbodypath=requestbody.txt
 - responsepath=response.txt
 ## PERMIT_CREATE
