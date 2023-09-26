@@ -1,10 +1,10 @@
 # ELENCO PARAMETRI
 - `baseurl`            = URL BASE
-    - default =  
+    - default = https://external-gw-staging.easyparksystem.net/api/
 - `call`               = Chiamata da effettuare
     - default = permit_get
 - `refreshtoken`       = Token auth di EasyPark
-    - default =  
+    - default = f9d290c93e9906f297528dec6edf64b9bfce7a4ba63c2ea4a47062dcb5de9bda
 - `parameters`         = Parametri URL
     - default = 
 - `requestbodypath`    = Path file da dove leggere la request body
@@ -16,14 +16,15 @@
 - "permit_get"
 - "permit_findallareas"
 - "permit_batch_delete"
+- "permit_licenseplate"
 # UTILIZZO
 - modifica il file "requestparams.txt" con i parametri della richiesta e "requestbody.txt" con la richiesta da inviare in caso di chiamata POST
 - da cmd esegui l'exe con i relativi parametri 
 
 # Esempi:
 Considera per gli esempi come valori fissi:
-- baseurl= 
-- refreshtoken= 
+- baseurl=https://external-gw-staging.easyparksystem.net/api/
+- refreshtoken=f9d290c93e9906f297528dec6edf64b9bfce7a4ba63c2ea4a47062dcb5de9bda
 - requestbodypath=requestbody.txt
 - responsepath=response.txt
 ## PERMIT_CREATE
@@ -87,3 +88,19 @@ Considera per gli esempi come valori fissi:
             {"applicationUniqueId":"IDPROVA2"},
             {"applicationUniqueId":"IDPROVA3"}
         ]
+
+## PERMIT_LICENSEPLATE
+### Comando: 
+    EasyParkService.exe -call=permit_licensePlate -parameters={\"licensePlate\":\"AB123CD\"}
+### Possibili risposte:
+    - [{code: 200, codedescription: OK, content: , error: }]
+    - [{code: 200, codedescription: OK, content: [{"carLicenceNumber":"string","countryCode":"string","discountRate":0,"maxDiscount":0,"parkingareaNo":0,"permitAreaName":"string","permitIdentifier":"USE_PHONENUMBER","permitName":"string","permitNote":"string","phoneNumber":"string","priceExclVat":0,"priceNotSubjectToVat":0,"priceTotal":0,"priceVat":0,"remainingParkingMinutes":0,"uniqueId":"string","validFrom":"2023-09-26T10:59:04.069Z","validTo":"2023-09-26T10:59:04.069Z","visibleForEnforcement":true}], error: }]
+    - [{code: 404, codedescription: Not Found, content: , error: {"timestamp":"2023-05-18T14:23:57.130+0000","status":404,"error":"Not  Found","message":"No message available","path":"/api/permit/"}}]
+    
+# Documentazione
+
+URL: https://external-gw-staging.easyparksystem.net/api/swagger-ui.html#/authentication-resource/getJwtUsingPOST
+
+RefreshToken: f9d290c93e9906f297528dec6edf64b9bfce7a4ba63c2ea4a47062dcb5de9bda
+
+Codice area: 22137
